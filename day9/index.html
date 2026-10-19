@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanban Board</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div>
+            <h1>📋 Kanban Board</h1>
+            <p>Organize your work, one task at a time.</p>
+        </div>
+        <button id="addTaskBtn" class="add-btn">+ Add Task</button>
+    </header>
+
+    <main class="board">
+        <section class="column todo" data-status="todo">
+            <h2>📝 To-Do <span class="count">0</span></h2>
+            <div class="task-list" id="todo"></div>
+        </section>
+
+        <section class="column doing" data-status="doing">
+            <h2>⚡ Doing <span class="count">0</span></h2>
+            <div class="task-list" id="doing"></div>
+        </section>
+
+        <section class="column done" data-status="done">
+            <h2>✅ Done <span class="count">0</span></h2>
+            <div class="task-list" id="done"></div>
+        </section>
+    </main>
+
+    <dialog id="taskDialog">
+        <form id="taskForm">
+            <h2>Add New Task</h2>
+            <label for="taskTitle">Task title</label>
+            <input id="taskTitle" type="text"
+                   placeholder="Enter task name..." maxlength="120" required>
+
+            <label for="taskDescription">Description (optional)</label>
+            <textarea id="taskDescription"
+                      placeholder="Describe your task..." maxlength="500"></textarea>
+
+            <div class="dialog-actions">
+                <button type="button" id="cancelBtn" class="cancel-btn">
+                    Cancel
+                </button>
+                <button type="submit" class="add-btn">Add Task</button>
+            </div>
+        </form>
+    </dialog>
+
+    <footer>
+        <p>Made with HTML, CSS & JavaScript | Your tasks save automatically.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
